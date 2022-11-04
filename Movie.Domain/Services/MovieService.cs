@@ -43,7 +43,7 @@ public class MovieService : Notifiable, IMovieService
         AddNotifications(movie);
         if (IsInvalid())
             return false;
-        var result = _movieRepository.Add(movie);
+        var result = _movieRepository.Edit(movie);
         if (result == null)
             return false;
         return true;

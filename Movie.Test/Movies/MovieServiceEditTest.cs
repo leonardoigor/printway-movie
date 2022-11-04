@@ -1,6 +1,5 @@
 using Moq;
 using Movie.Domain.Arguments.Movie;
-using Movie.Domain.Entities;
 using Movie.Domain.Interfaces.Repositories;
 using Movie.Domain.Interfaces.Services;
 using Movie.Domain.Services;
@@ -31,7 +30,7 @@ public class MovieServiceEditTest
     }
 
     [Test]
-    public void MustReturnTrueIfRequestIsValid()
+    public void MustReturnFalseIfRequestIsInValid()
     {
         var req = new MovieEditRequest
         {
@@ -40,11 +39,32 @@ public class MovieServiceEditTest
             price = 10,
             endDate = TimeSpan.FromDays(DateTime.Now.AddDays(1).Day),
             startDate = TimeSpan.FromDays(DateTime.Now.Day),
-            Room = new Room
+
+            Movie = new Domain.Entities.Movie
             {
                 Id = Guid.NewGuid(),
-                Name = "Sala 1"
-            },
+                Description = "",
+                Duration = TimeSpan.FromMinutes(120),
+                Image = "",
+                Title = ""
+            }
+        };
+        var result = _movieService.Edit(req);
+        Assert.AreEqual(result, false);
+    }
+
+    [Test]
+    public void MustReturnTrueIfRequestIsValid()
+    {
+        _movieRepositoryMock.Setup(x => x.Edit(It.IsAny<Domain.Entities.Movie>())).Returns(new Domain.Entities.Movie());
+        var req = new MovieEditRequest
+        {
+            Id = Guid.NewGuid(),
+            date = DateTime.Now,
+            price = 10,
+            endDate = TimeSpan.FromDays(DateTime.Now.AddDays(1).Day),
+            startDate = TimeSpan.FromDays(DateTime.Now.Day),
+
             Movie = new Domain.Entities.Movie
             {
                 Id = Guid.NewGuid(),
@@ -55,7 +75,7 @@ public class MovieServiceEditTest
             }
         };
         var result = _movieService.Edit(req);
-        Assert.AreEqual(true, true);
+        Assert.AreEqual(result, true);
     }
 
     [TearDown]
