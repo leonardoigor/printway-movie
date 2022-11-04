@@ -1,6 +1,4 @@
-﻿using Movie.Domain.Entities;
-
-namespace Movie.Domain.Arguments.Movie;
+﻿namespace Movie.Domain.Arguments.Movie;
 
 public class MovieEditRequest
 {
@@ -16,7 +14,7 @@ public class MovieEditRequest
     }
 
     public MovieEditRequest(DateTime date, TimeSpan endDate, double price, TimeSpan startDate, Enum typeAnimation,
-        Guid id, Entities.Movie movie, Room room)
+        Guid id, Entities.Movie movie, Entities.Room room)
     {
         this.date = date;
         this.endDate = endDate;
@@ -32,5 +30,5 @@ public class MovieEditRequest
 
 
     public Entities.Movie Movie { get; set; }
-    public Room Room { get; set; }
+    public Entities.Room Room { get; set; }
 }

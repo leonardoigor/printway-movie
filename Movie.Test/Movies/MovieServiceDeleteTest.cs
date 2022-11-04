@@ -71,11 +71,6 @@ public class MovieServiceDeleteTest
         Assert.AreEqual(_movieService.IsValid(), true);
     }
 
-    [Test]
-    public void Test1()
-    {
-        Assert.Pass();
-    }
 
     [TearDown]
     public void TearDown()
