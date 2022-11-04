@@ -120,4 +120,7 @@
   <data name="A_DESCRIÇÃO_DEVE_CONTER_ENTRE_X0_E_X1_CARACTERES" xml:space="preserve">
     <value>A descrição deve conter entre {0} e {1} caracteres</value>
   </data>
+  <data name="X0_INVALIDO" xml:space="preserve">
+    <value>{0} é Invalid!</value>
+  </data>
 </root>

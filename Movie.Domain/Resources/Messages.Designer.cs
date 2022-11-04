@@ -68,5 +68,14 @@ namespace Movie.Domain.Resources {
                 return ResourceManager.GetString("A_DESCRIÇÃO_DEVE_CONTER_ENTRE_X0_E_X1_CARACTERES", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} é Invalid!.
+        /// </summary>
+        internal static string X0_INVALIDO {
+            get {
+                return ResourceManager.GetString("X0_INVALIDO", resourceCulture);
+            }
+        }
     }
 }

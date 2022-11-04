@@ -1,4 +1,7 @@
 ﻿using Movie.Domain.Entities.Base;
+using Movie.Domain.Resources;
+using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
 
 namespace Movie.Domain.Entities;
 
@@ -6,9 +9,10 @@ public class Session : EntityBase
 {
     public Session()
     {
+        NotificationsConfig();
     }
 
-    public Session(DateTime date, TimeSpan startDate, TimeSpan endDate, double price, Enum typeAnimation,
+    public Session(DateTime date, string startDate, string endDate, double price, Enum typeAnimation,
         bool isDubbed, Movie movie, Room room)
     {
         Date = date;
@@ -19,11 +23,12 @@ public class Session : EntityBase
         IsDubbed = isDubbed;
         Movie = movie;
         Room = room;
+        NotificationsConfig();
     }
 
     public DateTime Date { get; set; }
-    public TimeSpan StartDate { get; set; }
-    public TimeSpan EndDate { get; set; }
+    public string StartDate { get; set; }
+    public string EndDate { get; set; }
     public double Price { get; set; }
     public Enum TypeAnimation { get; set; }
     public bool IsDubbed { get; set; }
@@ -32,13 +37,9 @@ public class Session : EntityBase
 
     protected override void NotificationsConfig()
     {
-        // new AddNotifications<Movie>(this)
-        //     .IfNullOrInvalidLength(x => x.Description, 1, 1000,
-        //         Messages.A_DESCRIÇÃO_DEVE_CONTER_ENTRE_X0_E_X1_CARACTERES.ToFormat("1", "1000"))
-        //     .IfNullOrInvalidLength(x => x.Title, 1, 1000,
-        //         Messages.A_DESCRIÇÃO_DEVE_CONTER_ENTRE_X0_E_X1_CARACTERES.ToFormat("1", "1000"))
-        //     .IfNullOrInvalidLength(x => x.Image, 1, 1000,
-        //         Messages.A_DESCRIÇÃO_DEVE_CONTER_ENTRE_X0_E_X1_CARACTERES.ToFormat("1", "1000"));
+        new AddNotifications<Session>(this)
+            .IfGreaterThan(x => x.Price, 1, Messages.X0_INVALIDO.ToFormat("Preço"));
+
         base.NotificationsConfig();
     }
 }
