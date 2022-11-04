@@ -23,8 +23,21 @@ public class RoomService : Notifiable
         if (IsInvalid())
             return false;
 
-        _roonRepository.Add(room);
+        var result = _roonRepository.Add(room);
+        if (result == null)
+            return false;
+        return true;
+    }
 
+    public bool Edit(EditRoomRequest req)
+    {
+        var room = new Room(req.Room.Name, req.Room.Quantity);
+        AddNotifications(room);
+        if (IsInvalid())
+            return false;
+        var result = _roonRepository.Edit(room);
+        if (result == null)
+            return false;
         return true;
     }
 }
