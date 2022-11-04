@@ -7,6 +7,10 @@ namespace Movie.Domain.Entities;
 
 public class Movie : EntityBase
 {
+    public Movie()
+    {
+    }
+
     public Movie(string image, string title, string description, TimeSpan duration)
     {
         Image = image;

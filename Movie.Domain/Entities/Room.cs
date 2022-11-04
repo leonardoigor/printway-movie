@@ -4,6 +4,10 @@ namespace Movie.Domain.Entities;
 
 public class Room : EntityBase
 {
+    public Room()
+    {
+    }
+
     public Room(string name, int quantity)
     {
         Name = name;
