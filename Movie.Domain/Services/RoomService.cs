@@ -40,4 +40,13 @@ public class RoomService : Notifiable
             return false;
         return true;
     }
+
+    public bool Remove(RoomRemoverRequest req)
+    {
+        var room = new Room(req.Room.Name, req.Room.Quantity);
+        AddNotifications(room);
+        if (IsInvalid())
+            return false;
+        return _roonRepository.Remove(room);
+    }
 }
