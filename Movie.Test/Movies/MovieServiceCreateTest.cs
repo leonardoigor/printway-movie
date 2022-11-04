@@ -19,11 +19,6 @@ public class MovieServiceCreateTest
         _movieService = new MovieService(_sessionRepositoryMock.Object);
     }
 
-    [Test]
-    public void Test1()
-    {
-        Assert.Pass();
-    }
 
     [Test]
     public void MustReturnFalseIfRequestHasError()
