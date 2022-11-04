@@ -4,23 +4,29 @@ namespace Movie.Domain.Entities;
 
 public class Session : EntityBase
 {
-    public Session(string date, string startDate, string endDate, TimeSpan value, TimeSpan typeAnimation,
-        TimeSpan isDubbed)
+    public Session()
+    {
+    }
+
+    public Session(DateTime date, TimeSpan startDate, TimeSpan endDate, double price, Enum typeAnimation,
+        bool isDubbed, Movie movie, Room room)
     {
         Date = date;
         StartDate = startDate;
         EndDate = endDate;
-        Value = value;
+        Price = price;
         TypeAnimation = typeAnimation;
         IsDubbed = isDubbed;
+        Movie = movie;
+        Room = room;
     }
 
-    public string Date { get; set; }
-    public string StartDate { get; set; }
-    public string EndDate { get; set; }
-    public TimeSpan Value { get; set; }
-    public TimeSpan TypeAnimation { get; set; }
-    public TimeSpan IsDubbed { get; set; }
+    public DateTime Date { get; set; }
+    public TimeSpan StartDate { get; set; }
+    public TimeSpan EndDate { get; set; }
+    public double Price { get; set; }
+    public Enum TypeAnimation { get; set; }
+    public bool IsDubbed { get; set; }
     public virtual Movie Movie { get; set; }
     public virtual Room Room { get; set; }
 

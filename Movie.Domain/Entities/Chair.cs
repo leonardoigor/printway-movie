@@ -19,6 +19,6 @@ public class Chair
         var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var letter = letters[Index / SizeByCollumn];
         var value = Index % SizeByCollumn + 1;
-        return string.Format("{0}{1}", letter, value);
+        return string.Format("{0}-{1}", letter, value);
     }
 }
