@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "HV2+RdCQgutV/F86nrQv8fyhg8w7cbMwnkPxgJEVBEdzpPHyKiGRi/UNCvy+FbP2rUt/qGGxD0SyJuLbP6nIaw==",
+  "dgSpecHash": "z9lpzYJSAr272LkxleSFDmy8CB3RlMk7/c6qIVnrUw+DscRQ2rufYmO0ndSFAmv5mMKqX5knH6QaF/UlbwqTQw==",
   "success": true,
   "projectFilePath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Test\\Test.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\igor_\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\igor_\\.nuget\\packages\\moq\\4.18.2\\moq.4.18.2.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\prmtoolkit.notificationpattern\\1.1.5\\prmtoolkit.notificationpattern.1.1.5.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -32,6 +34,7 @@
     "C:\\Users\\igor_\\.nuget\\packages\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.3.0\\system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
+    "C:\\Users\\igor_\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
