@@ -1,0 +1,14 @@
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\bin\Debug\net6.0\Movie.Domain.deps.json
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\bin\Debug\net6.0\Movie.Domain.dll
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\bin\Debug\net6.0\Movie.Domain.pdb
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\Movie.Domain.csproj.AssemblyReference.cache
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\Movie.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\Movie.Domain.AssemblyInfoInputs.cache
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\Movie.Domain.AssemblyInfo.cs
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\Movie.Domain.csproj.CoreCompileInputs.cache
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\Movie.Domain.dll
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\refint\Movie.Domain.dll
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\Movie.Domain.pdb
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\ref\Movie.Domain.dll
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\Movie.Domain.Resources.Messages.resources
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Domain\obj\Debug\net6.0\Movie.Domain.csproj.GenerateResource.cache

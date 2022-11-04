@@ -1,0 +1,126 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Test\\Test.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj",
+        "projectName": "Movie.Domain",
+        "projectPath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj",
+        "packagesPath": "C:\\Users\\igor_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\igor_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "prmToolkit.NotificationPattern": {
+              "target": "Package",
+              "version": "[1.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Test\\Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Test\\Test.csproj",
+        "projectName": "Test",
+        "projectPath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Test\\Test.csproj",
+        "packagesPath": "C:\\Users\\igor_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\igor_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj": {
+                "projectPath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
