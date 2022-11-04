@@ -29,13 +29,15 @@ public class RoomServiceCreateTest
                 Quantity = 50
             }
         };
-        _roomService.Add(req);
+        var result = _roomService.Add(req);
         Assert.AreEqual(false, _roomService.IsValid());
+        Assert.AreEqual(false, result);
     }
 
     [Test]
     public void MustReturnTrueIfReqIsvalid()
     {
+        _roomRepositoryMock.Setup(x => x.Add(It.IsAny<Room>())).Returns(new Room());
         var req = new RoomAddRequest
         {
             Room = new Room
@@ -44,8 +46,9 @@ public class RoomServiceCreateTest
                 Quantity = 50
             }
         };
-        _roomService.Add(req);
+        var result = _roomService.Add(req);
         Assert.AreEqual(true, _roomService.IsValid());
+        Assert.AreEqual(true, result);
     }
 
 

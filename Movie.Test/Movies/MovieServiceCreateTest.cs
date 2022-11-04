@@ -11,16 +11,12 @@ public class MovieServiceCreateTest
 {
     private Mock<IMovieRepository> _movieRepositoryMock;
     private IMovieService _movieService;
-    private Mock<IRoomRepository> _roomRepositoryMock;
-    private Mock<ISessionRepository> _sessionRepositoryMock;
 
     [SetUp]
     public void Setup()
     {
-        _sessionRepositoryMock = new Mock<ISessionRepository>();
         _movieRepositoryMock = new Mock<IMovieRepository>();
-        _roomRepositoryMock = new Mock<IRoomRepository>();
-        _movieService = new MovieService(_sessionRepositoryMock.Object, _roomRepositoryMock.Object,
+        _movieService = new MovieService(
             _movieRepositoryMock.Object);
     }
 
@@ -28,8 +24,6 @@ public class MovieServiceCreateTest
     [Test]
     public void MustReturnFalseIfRequestHasError()
     {
-        _sessionRepositoryMock.Setup(x => x.Add(It.IsAny<Session>())).Returns(new Session());
-        _roomRepositoryMock.Setup(x => x.GetById(It.IsAny<Guid>())).Returns(new Room());
         _movieRepositoryMock.Setup(x => x.GetById(It.IsAny<Guid>())).Returns(new Domain.Entities.Movie());
         var req = new MovieAddRequest
         {
@@ -38,6 +32,7 @@ public class MovieServiceCreateTest
         };
         var result = _movieService.AddMovie(req);
         Assert.AreEqual(result, false);
+        Assert.AreEqual(_movieService.IsValid(), false);
     }
 
     [Test]
@@ -51,15 +46,14 @@ public class MovieServiceCreateTest
         };
         var result = _movieService.AddMovie(req);
         Assert.AreEqual(result, true);
+        Assert.AreEqual(_movieService.IsValid(), true);
     }
 
 
     [TearDown]
     public void TearDown()
     {
-        _sessionRepositoryMock = null;
         _movieRepositoryMock = null;
-        _roomRepositoryMock = null;
         _movieService = null;
     }
 }

@@ -10,16 +10,12 @@ public class MovieServiceEditTest
 {
     private Mock<IMovieRepository> _movieRepositoryMock;
     private IMovieService _movieService;
-    private Mock<IRoomRepository> _roomRepositoryMock;
-    private Mock<ISessionRepository> _sessionRepositoryMock;
 
     [SetUp]
     public void Setup()
     {
-        _sessionRepositoryMock = new Mock<ISessionRepository>();
         _movieRepositoryMock = new Mock<IMovieRepository>();
-        _roomRepositoryMock = new Mock<IRoomRepository>();
-        _movieService = new MovieService(_sessionRepositoryMock.Object, _roomRepositoryMock.Object,
+        _movieService = new MovieService(
             _movieRepositoryMock.Object);
     }
 
@@ -46,6 +42,7 @@ public class MovieServiceEditTest
         };
         var result = _movieService.Edit(req);
         Assert.AreEqual(result, false);
+        Assert.AreEqual(_movieService.IsValid(), false);
     }
 
     [Test]
@@ -71,14 +68,14 @@ public class MovieServiceEditTest
         };
         var result = _movieService.Edit(req);
         Assert.AreEqual(result, true);
+        Assert.AreEqual(_movieService.IsValid(), true);
     }
 
     [TearDown]
     public void TearDown()
     {
-        _sessionRepositoryMock = null;
         _movieRepositoryMock = null;
-        _roomRepositoryMock = null;
+
         _movieService = null;
     }
 }

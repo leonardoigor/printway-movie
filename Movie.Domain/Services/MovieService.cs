@@ -8,15 +8,11 @@ namespace Movie.Domain.Services;
 public class MovieService : Notifiable, IMovieService
 {
     private readonly IMovieRepository _movieRepository;
-    private readonly IRoomRepository _roomRepository;
 
-    private readonly ISessionRepository _sessionRepository;
 
-    public MovieService(ISessionRepository sessionRepository, IRoomRepository roomRepository,
+    public MovieService(
         IMovieRepository movieRepository)
     {
-        _sessionRepository = sessionRepository;
-        _roomRepository = roomRepository;
         _movieRepository = movieRepository;
     }
 

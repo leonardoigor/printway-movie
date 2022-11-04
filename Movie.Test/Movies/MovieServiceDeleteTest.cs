@@ -10,16 +10,12 @@ public class MovieServiceDeleteTest
 {
     private Mock<IMovieRepository> _movieRepositoryMock;
     private IMovieService _movieService;
-    private Mock<IRoomRepository> _roomRepositoryMock;
-    private Mock<ISessionRepository> _sessionRepositoryMock;
 
     [SetUp]
     public void Setup()
     {
-        _sessionRepositoryMock = new Mock<ISessionRepository>();
         _movieRepositoryMock = new Mock<IMovieRepository>();
-        _roomRepositoryMock = new Mock<IRoomRepository>();
-        _movieService = new MovieService(_sessionRepositoryMock.Object, _roomRepositoryMock.Object,
+        _movieService = new MovieService(
             _movieRepositoryMock.Object);
     }
 
@@ -45,6 +41,7 @@ public class MovieServiceDeleteTest
         };
         var result = _movieService.Remove(req);
         Assert.AreEqual(result, false);
+        Assert.AreEqual(_movieService.IsValid(), false);
     }
 
     [Test]
@@ -67,17 +64,16 @@ public class MovieServiceDeleteTest
                 Title = "00"
             }
         };
-        _movieService.Remove(req);
+        var result = _movieService.Remove(req);
         Assert.AreEqual(_movieService.IsValid(), true);
+        Assert.AreEqual(result, true);
     }
 
 
     [TearDown]
     public void TearDown()
     {
-        _sessionRepositoryMock = null;
         _movieRepositoryMock = null;
-        _roomRepositoryMock = null;
         _movieService = null;
     }
 }
