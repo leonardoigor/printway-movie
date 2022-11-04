@@ -6,7 +6,7 @@ using Movie.Domain.Services;
 
 namespace Movie.Test.Movies;
 
-public class MovieServiceEditTest
+public class MovieServiceDeleteTest
 {
     private Mock<IMovieRepository> _movieRepositoryMock;
     private IMovieService _movieService;
@@ -23,11 +23,10 @@ public class MovieServiceEditTest
             _movieRepositoryMock.Object);
     }
 
-
     [Test]
-    public void MustReturnFalseIfRequestIsInValid()
+    public void MustReturnFalseIfRequestIsInvalid()
     {
-        var req = new MovieEditRequest
+        var req = new DeleteMovieRequest
         {
             Id = Guid.NewGuid(),
             date = DateTime.Now,
@@ -44,15 +43,14 @@ public class MovieServiceEditTest
                 Title = ""
             }
         };
-        var result = _movieService.Edit(req);
+        var result = _movieService.Remove(req);
         Assert.AreEqual(result, false);
     }
 
     [Test]
-    public void MustReturnTrueIfRequestIsValid()
+    public void MustReturnTrueIfRequestIsvalid()
     {
-        _movieRepositoryMock.Setup(x => x.Edit(It.IsAny<Domain.Entities.Movie>())).Returns(new Domain.Entities.Movie());
-        var req = new MovieEditRequest
+        var req = new DeleteMovieRequest
         {
             Id = Guid.NewGuid(),
             date = DateTime.Now,
@@ -63,14 +61,20 @@ public class MovieServiceEditTest
             Movie = new Domain.Entities.Movie
             {
                 Id = Guid.NewGuid(),
-                Description = "Filme 1",
+                Description = "0000",
                 Duration = TimeSpan.FromMinutes(120),
-                Image = "image",
-                Title = "Filme 1"
+                Image = "000",
+                Title = "00"
             }
         };
-        var result = _movieService.Edit(req);
-        Assert.AreEqual(result, true);
+        _movieService.Remove(req);
+        Assert.AreEqual(_movieService.IsValid(), true);
+    }
+
+    [Test]
+    public void Test1()
+    {
+        Assert.Pass();
     }
 
     [TearDown]

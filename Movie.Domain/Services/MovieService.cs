@@ -48,4 +48,18 @@ public class MovieService : Notifiable, IMovieService
             return false;
         return true;
     }
+
+    public bool Remove(DeleteMovieRequest movieRequest)
+    {
+        var movie = new Entities.Movie(movieRequest.Movie.Image, movieRequest.Movie.Title,
+            movieRequest.Movie.Description, movieRequest.Movie.Duration);
+        _movieRepository.Add(movie);
+        AddNotifications(movie);
+        if (IsInvalid())
+            return false;
+        var result = _movieRepository.Remove(movie);
+        if (result == null)
+            return false;
+        return true;
+    }
 }

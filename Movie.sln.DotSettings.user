@@ -7,5 +7,7 @@
     &lt;TestId&gt;NUnit3x::D09360D1-E532-4507-A077-D804988F7FBB::net6.0::Movie.Test.Movies.MovieServiceCreateTest.MustReturnTrueIfRequestIsValid&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::D09360D1-E532-4507-A077-D804988F7FBB::net6.0::Movie.Test.Movies.MovieServiceCreateTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::D09360D1-E532-4507-A077-D804988F7FBB::net6.0::Movie.Test.Movies.MovieServiceEditTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::D09360D1-E532-4507-A077-D804988F7FBB::net6.0::Movie.Test.Movies.MovieServiceDelete&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::D09360D1-E532-4507-A077-D804988F7FBB::net6.0::Movie.Test.Movies.MovieServiceDeleteTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
