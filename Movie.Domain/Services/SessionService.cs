@@ -1,11 +1,12 @@
 ﻿using Movie.Domain.Arguments.SessionRequest;
 using Movie.Domain.Entities;
 using Movie.Domain.Interfaces.Repositories;
+using Movie.Domain.Interfaces.Services;
 using prmToolkit.NotificationPattern;
 
 namespace Movie.Domain.Services;
 
-public class SessionService : Notifiable
+public class SessionService : Notifiable,ISessionService
 {
     private readonly ISessionRepository _sessionRepository;
 
