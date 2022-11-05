@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Infra", "Movie.Infra\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Test", "Movie.Test\Movie.Test.csproj", "{D09360D1-E532-4507-A077-D804988F7FBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.IOC", "Movie.IOC\Movie.IOC.csproj", "{EA0D4301-5BA4-475D-9BC9-5E15A93FF2ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{D09360D1-E532-4507-A077-D804988F7FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D09360D1-E532-4507-A077-D804988F7FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D09360D1-E532-4507-A077-D804988F7FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA0D4301-5BA4-475D-9BC9-5E15A93FF2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA0D4301-5BA4-475D-9BC9-5E15A93FF2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA0D4301-5BA4-475D-9BC9-5E15A93FF2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA0D4301-5BA4-475D-9BC9-5E15A93FF2ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
