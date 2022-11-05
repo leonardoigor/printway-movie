@@ -1,6 +1,5 @@
 using Moq;
 using Movie.Domain.Arguments.SessionRequest;
-using Movie.Domain.Entities;
 using Movie.Domain.Interfaces.Repositories;
 using Movie.Domain.Services;
 
@@ -27,9 +26,8 @@ public class SessionServiceAddTest
         {
             Date = DateTime.Now,
             MovieId = Guid.NewGuid(),
-            Movie = new Domain.Entities.Movie(),
             Price = 10d,
-            Room = new Room(),
+            RoomId = Guid.NewGuid(),
             EndDate = DateTime.Now.AddHours(2).ToLongDateString(),
             EndTime = DateTime.Now.AddHours(2).ToLongTimeString(),
             IsDubbed = true,

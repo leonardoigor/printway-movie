@@ -59,4 +59,12 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
             return false;
         return true;
     }
+
+    public bool Exist(Guid movieId)
+    {
+        var result = _movieRepository.Exist(x => x.Id == movieId);
+        if (!result)
+            AddNotification("Filme", "Filme não encontrado");
+        return result;
+    }
 }

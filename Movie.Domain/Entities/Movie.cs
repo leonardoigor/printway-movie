@@ -11,7 +11,7 @@ public class Movie : EntityBase
     {
     }
 
-    public Movie(string image, string title, string description, TimeSpan duration)
+    public Movie(string image, string title, string description, DateTime duration)
     {
         Image = image;
         Title = title;
@@ -23,7 +23,7 @@ public class Movie : EntityBase
     public string Image { get; set; }
     public string Title { get; set; }
     public string Description { get; set; }
-    public TimeSpan Duration { get; set; }
+    public DateTime Duration { get; set; }
 
     protected override void NotificationsConfig()
     {

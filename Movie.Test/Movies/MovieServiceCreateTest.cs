@@ -27,7 +27,7 @@ public class MovieServiceCreateTest
         _movieRepositoryMock.Setup(x => x.GetById(It.IsAny<Guid>())).Returns(new Domain.Entities.Movie());
         var req = new MovieAddRequest
         {
-            Movie = new Domain.Entities.Movie("", "", "", TimeSpan.MinValue),
+            Movie = new Domain.Entities.Movie("", "", "", DateTime.Now),
             Room = new Room("teste", 50)
         };
         var result = _movieService.AddMovie(req);
@@ -41,7 +41,7 @@ public class MovieServiceCreateTest
         _movieRepositoryMock.Setup(x => x.Add(It.IsAny<Domain.Entities.Movie>())).Returns(new Domain.Entities.Movie());
         var req = new MovieAddRequest
         {
-            Movie = new Domain.Entities.Movie("0000", "0000", "000", TimeSpan.MinValue),
+            Movie = new Domain.Entities.Movie("0000", "0000", "000", DateTime.Now),
             Room = new Room("teste", 50)
         };
         var result = _movieService.AddMovie(req);

@@ -8,4 +8,5 @@ public interface IMovieService : INotifiable
     public bool AddMovie(MovieAddRequest movie);
     public bool Edit(MovieEditRequest movieRequest);
     public bool Remove(DeleteMovieRequest movieRequest);
+    bool Exist(Guid movieId);
 }

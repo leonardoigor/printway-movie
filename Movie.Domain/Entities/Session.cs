@@ -1,4 +1,5 @@
 ﻿using Movie.Domain.Entities.Base;
+using Movie.Domain.Enums;
 using Movie.Domain.Resources;
 using prmToolkit.NotificationPattern;
 using prmToolkit.NotificationPattern.Extensions;
@@ -12,7 +13,7 @@ public class Session : EntityBase
         NotificationsConfig();
     }
 
-    public Session(DateTime date, string startDate, string endDate, double price, Enum typeAnimation,
+    public Session(DateTime date, string startDate, string endDate, double price, TypeAnimation typeAnimation,
         bool isDubbed, Movie movie, Room room)
     {
         Date = date;
@@ -30,10 +31,12 @@ public class Session : EntityBase
     public string StartDate { get; set; }
     public string EndDate { get; set; }
     public double Price { get; set; }
-    public Enum TypeAnimation { get; set; }
+    public TypeAnimation TypeAnimation { get; set; }
     public bool IsDubbed { get; set; }
     public virtual Movie Movie { get; set; }
     public virtual Room Room { get; set; }
+    public Guid RoomId { get; set; }
+    public Guid MovieId { get; set; }
 
     protected override void NotificationsConfig()
     {

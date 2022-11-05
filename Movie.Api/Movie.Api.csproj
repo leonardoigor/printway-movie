@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Movie.Infra\Movie.Infra.csproj" />
+      <ProjectReference Include="..\Movie.IOC\Movie.IOC.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using Movie.Domain.Entities;
+using Movie.Domain.Enums;
 
 namespace Movie.Domain.Arguments.SessionRequest;
 
@@ -7,7 +8,7 @@ public class SessionEditRequest
     public string EndTime;
     public Guid MovieId;
     public string StartTime;
-    public Enum TypeAnimation { get; set; }
+    public TypeAnimation TypeAnimation { get; set; }
     public DateTime Date { get; set; }
     public Entities.Movie Movie { get; set; }
     public double Price { get; set; }

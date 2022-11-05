@@ -21,9 +21,9 @@ public class SessionService : Notifiable, ISessionService, IServiceBase
         var session = new Session
         {
             Date = req.Date,
-            Movie = req.Movie,
+            MovieId = req.MovieId,
             Price = req.Price,
-            Room = req.Room,
+            RoomId = req.RoomId,
             EndDate = req.EndDate,
             IsDubbed = req.IsDubbed,
             StartDate = req.StartDate,

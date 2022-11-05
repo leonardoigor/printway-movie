@@ -35,7 +35,7 @@ public class MovieServiceEditTest
             {
                 Id = Guid.NewGuid(),
                 Description = "",
-                Duration = TimeSpan.FromMinutes(120),
+                Duration = DateTime.Now,
                 Image = "",
                 Title = ""
             }
@@ -61,7 +61,7 @@ public class MovieServiceEditTest
             {
                 Id = Guid.NewGuid(),
                 Description = "Filme 1",
-                Duration = TimeSpan.FromMinutes(120),
+                Duration = DateTime.Now,
                 Image = "image",
                 Title = "Filme 1"
             }
