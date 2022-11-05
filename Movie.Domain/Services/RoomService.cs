@@ -1,11 +1,14 @@
-﻿using Movie.Domain.Arguments.RoomRequest;
+﻿using Movie.Domain.Arguments.Movie;
+using Movie.Domain.Arguments.RoomRequest;
 using Movie.Domain.Entities;
 using Movie.Domain.Interfaces.Repositories;
+using Movie.Domain.Interfaces.Services;
+using Movie.Domain.Services.Base;
 using prmToolkit.NotificationPattern;
 
 namespace Movie.Domain.Services;
 
-public class RoomService : Notifiable
+public class RoomService : Notifiable, IRoomService, IServiceBase
 {
     private readonly IRoomRepository _roonRepository;
 
@@ -27,6 +30,16 @@ public class RoomService : Notifiable
         if (result == null)
             return false;
         return true;
+    }
+
+    public bool Edit(MovieEditRequest movieRequest)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Remove(DeleteMovieRequest movieRequest)
+    {
+        throw new NotImplementedException();
     }
 
     public bool Edit(EditRoomRequest req)

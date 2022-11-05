@@ -1,11 +1,12 @@
 ﻿using Movie.Domain.Arguments.Movie;
 using Movie.Domain.Interfaces.Repositories;
 using Movie.Domain.Interfaces.Services;
+using Movie.Domain.Services.Base;
 using prmToolkit.NotificationPattern;
 
 namespace Movie.Domain.Services;
 
-public class MovieService : Notifiable, IMovieService
+public class MovieService : Notifiable, IMovieService, IServiceBase
 {
     private readonly IMovieRepository _movieRepository;
 
