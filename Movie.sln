@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Test", "Movie.Test\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.IOC", "Movie.IOC\Movie.IOC.csproj", "{EA0D4301-5BA4-475D-9BC9-5E15A93FF2ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Api", "Movie.Api\Movie.Api.csproj", "{54C2608B-1902-4A4E-9C1D-1C2F795AE4CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{EA0D4301-5BA4-475D-9BC9-5E15A93FF2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA0D4301-5BA4-475D-9BC9-5E15A93FF2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA0D4301-5BA4-475D-9BC9-5E15A93FF2ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54C2608B-1902-4A4E-9C1D-1C2F795AE4CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54C2608B-1902-4A4E-9C1D-1C2F795AE4CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54C2608B-1902-4A4E-9C1D-1C2F795AE4CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54C2608B-1902-4A4E-9C1D-1C2F795AE4CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
