@@ -10,3 +10,10 @@ C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\refint\Movie.Infra.dll
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.pdb
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\ref\Movie.Infra.dll
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\bin\Debug\net6.0\Movie.Infra.runtimeconfig.json
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\bin\Debug\net6.0\Movie.Domain.dll
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\bin\Debug\net6.0\Movie.Domain.pdb
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.csproj.CopyComplete
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.genruntimeconfig.cache
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.Migrations.initMigration.resources
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.csproj.GenerateResource.cache

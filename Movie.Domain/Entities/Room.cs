@@ -20,7 +20,7 @@ public class Room : EntityBase
 
     public string Name { get; set; }
     public int Quantity { get; set; }
-
+    [System.ComponentModel.DataAnnotations.Schema.NotMapped]
     public List<Chair> Chairs => GenerateChairs();
 
     private List<Chair> GenerateChairs()
