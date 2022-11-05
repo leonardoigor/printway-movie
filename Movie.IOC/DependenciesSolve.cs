@@ -4,6 +4,7 @@ using Movie.Domain.Interfaces.Repositories.Base;
 using Movie.Domain.Interfaces.Services;
 using Movie.Domain.Services;
 using Movie.Infra.Persistence.Contexts;
+using Movie.Infra.Persistence.Repositories;
 using Movie.Infra.Persistence.Repositories.Base;
 using Movie.Infra.Transactions;
 using Movie.Infra.Transactions.Base;
