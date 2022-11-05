@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Movie.Domain.Interfaces.Repositories;
 using Movie.Domain.Interfaces.Repositories.Base;
 using Movie.Domain.Interfaces.Services;
 using Movie.Domain.Services;
@@ -19,7 +20,9 @@ public static class DependenciesSolve
         // add repositories
         ser.AddTransient(typeof(IRepositoryBase<,>), typeof(RepositoryBase<,>));
 
-        // ser.AddTransient<IPostRepository, PostRepository>();
+        ser.AddTransient<IMovieRepository, MovieRepository>();
+        ser.AddTransient<ISessionRepository, SessionRepository>();
+        ser.AddTransient<IRoomRepository, RoomRepository>();
 
         //add services
         ser.AddTransient<IMovieService, MovieService>();
