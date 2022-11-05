@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Movie.Domain.Interfaces.Repositories.Base;
 using Movie.Infra.Persistence.Contexts;
+using Movie.Infra.Persistence.Repositories.Base;
 using Movie.Infra.Transactions;
 using Movie.Infra.Transactions.Base;
 
