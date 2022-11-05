@@ -11,19 +11,21 @@ public class Movie : EntityBase
     {
     }
 
-    public Movie(string image, string title, string description, DateTime duration)
+    public Movie(string image, string title, string description, int minutes, int hours)
     {
         Image = image;
         Title = title;
         Description = description;
-        Duration = duration;
+        Hours = hours;
+        Minutes = minutes;
         NotificationsConfig();
     }
 
     public string Image { get; set; }
     public string Title { get; set; }
     public string Description { get; set; }
-    public DateTime Duration { get; set; }
+    public int Minutes { get; set; }
+    public int Hours { get; set; }
 
     protected override void NotificationsConfig()
     {

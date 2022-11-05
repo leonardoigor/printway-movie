@@ -21,7 +21,7 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
     public bool AddMovie(MovieAddRequest movieRequest)
     {
         var movie = new Entities.Movie(movieRequest.Movie.Image, movieRequest.Movie.Title,
-            movieRequest.Movie.Description, movieRequest.Movie.Duration);
+            movieRequest.Movie.Description, movieRequest.Movie.Minutes,movieRequest.Movie.Hours);
 
         AddNotifications(movie);
         if (IsInvalid())
@@ -35,7 +35,7 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
     public bool Edit(MovieEditRequest movieRequest)
     {
         var movie = new Entities.Movie(movieRequest.Movie.Image, movieRequest.Movie.Title,
-            movieRequest.Movie.Description, movieRequest.Movie.Duration);
+            movieRequest.Movie.Description, movieRequest.Movie.Minutes,movieRequest.Movie.Hours);
         _movieRepository.Add(movie);
         AddNotifications(movie);
         if (IsInvalid())
@@ -49,7 +49,7 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
     public bool Remove(DeleteMovieRequest movieRequest)
     {
         var movie = new Entities.Movie(movieRequest.Movie.Image, movieRequest.Movie.Title,
-            movieRequest.Movie.Description, movieRequest.Movie.Duration);
+            movieRequest.Movie.Description, movieRequest.Movie.Minutes,movieRequest.Movie.Hours);
         _movieRepository.Add(movie);
         AddNotifications(movie);
         if (IsInvalid())
@@ -63,6 +63,14 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
     public bool Exist(Guid movieId)
     {
         var result = _movieRepository.Exist(x => x.Id == movieId);
+        if (!result)
+            AddNotification("Filme", "Filme não encontrado");
+        return result;
+    }
+
+    public bool Exist(string movieTitle)
+    {
+        var result = _movieRepository.Exist(x => x.Title == movieTitle);
         if (!result)
             AddNotification("Filme", "Filme não encontrado");
         return result;

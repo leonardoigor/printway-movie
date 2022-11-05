@@ -34,7 +34,8 @@ public class MovieServiceDeleteTest
             {
                 Id = Guid.NewGuid(),
                 Description = "",
-                Duration = DateTime.Now,
+                Hours = 0,
+                Minutes = 0,
                 Image = "",
                 Title = ""
             }
@@ -59,7 +60,8 @@ public class MovieServiceDeleteTest
             {
                 Id = Guid.NewGuid(),
                 Description = "0000",
-                Duration = DateTime.Now,
+                Hours = 0,
+                Minutes = 0,
                 Image = "000",
                 Title = "00"
             }

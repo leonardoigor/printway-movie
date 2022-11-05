@@ -44,3 +44,8 @@ C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\bin\Debug\net6.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\bin\Debug\net6.0\System.IO.Pipelines.dll
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\bin\Debug\net6.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.Migrations.DbDurationToTimeOnly.resources
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.Migrations.DbDurationToTime.resources
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.Migrations.DbDurationToTimeOFFSET.resources
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.Migrations.DbDurationToTimeAC.resources
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.Migrations.DbMinHour.resources

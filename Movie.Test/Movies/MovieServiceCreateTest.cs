@@ -1,6 +1,5 @@
 using Moq;
 using Movie.Domain.Arguments.Movie;
-using Movie.Domain.Entities;
 using Movie.Domain.Interfaces.Repositories;
 using Movie.Domain.Interfaces.Services;
 using Movie.Domain.Services;
@@ -27,8 +26,7 @@ public class MovieServiceCreateTest
         _movieRepositoryMock.Setup(x => x.GetById(It.IsAny<Guid>())).Returns(new Domain.Entities.Movie());
         var req = new MovieAddRequest
         {
-            Movie = new Domain.Entities.Movie("", "", "", DateTime.Now),
-            Room = new Room("teste", 50)
+            Movie = new Domain.Entities.Movie("", "", "", 0,0)
         };
         var result = _movieService.AddMovie(req);
         Assert.AreEqual(result, false);
@@ -41,8 +39,7 @@ public class MovieServiceCreateTest
         _movieRepositoryMock.Setup(x => x.Add(It.IsAny<Domain.Entities.Movie>())).Returns(new Domain.Entities.Movie());
         var req = new MovieAddRequest
         {
-            Movie = new Domain.Entities.Movie("0000", "0000", "000", DateTime.Now),
-            Room = new Room("teste", 50)
+            Movie = new Domain.Entities.Movie("0000", "0000", "000", 0,0)
         };
         var result = _movieService.AddMovie(req);
         Assert.AreEqual(result, true);
