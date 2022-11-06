@@ -12,21 +12,22 @@ namespace Movie.Api.Controllers;
 [Route("[controller]")]
 public class MovieController : ControllerBaseApiController
 {
-    private readonly ILogger<WeatherForecastController> _logger;
+    private readonly ILogger _logger;
     private readonly IMovieService _movieService;
     private readonly IRoomService _roomService;
     private readonly ISessionService _sessionService;
 
-    public MovieController(IUnitOfWork transaction, ILogger<WeatherForecastController> logger,
+    public MovieController(IUnitOfWork transaction, ILogger logger,
         IMovieService movieService,
         ISessionService sessionService,
-        IRoomService roomService) : base(transaction)
+        IRoomService roomService) : base(logger, transaction)
     {
         _logger = logger;
         _movieService = movieService;
         _sessionService = sessionService;
         _roomService = roomService;
     }
+
 
     [HttpPost(Name = "create-movie")]
     public async Task<ActionResult> CreateMovie(MovieAddRequest request)

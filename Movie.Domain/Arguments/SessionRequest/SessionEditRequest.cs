@@ -16,4 +16,5 @@ public class SessionEditRequest
     public string EndDate { get; set; }
     public bool IsDubbed { get; set; }
     public string StartDate { get; set; }
+    public Guid Id { get; set; }
 }

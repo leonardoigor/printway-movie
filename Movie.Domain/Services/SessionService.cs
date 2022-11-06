@@ -83,4 +83,36 @@ public class SessionService : Notifiable, ISessionService, IServiceBase
 
         return _sessionRepository.Remove(session);
     }
+
+    public List<Session> GetAll()
+    {
+        return _sessionRepository.List().ToList();
+    }
+
+    public bool Update(SessionEditRequest request)
+    {
+        var session = _sessionRepository.GetById(request.Id);
+        if (session == null)
+            AddNotification("Session", "Sessão não encontrada");
+        session.Date = request.Date;
+        session.Movie = request.Movie;
+        session.Price = request.Price;
+        session.Room = request.Room;
+        session.EndDate = request.EndDate;
+        session.IsDubbed = request.IsDubbed;
+        session.StartDate = request.StartDate;
+        session.TypeAnimation = request.TypeAnimation;
+
+        _sessionRepository.Edit(session);
+        return true;
+    }
+
+    public bool Delete(Guid id)
+    {
+        var session = _sessionRepository.GetById(id);
+        if (session == null)
+            AddNotification("Session", "Sessão não encontrada");
+
+        return _sessionRepository.Remove(session);
+    }
 }

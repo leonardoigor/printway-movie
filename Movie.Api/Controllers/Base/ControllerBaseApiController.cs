@@ -6,12 +6,14 @@ namespace Movie.Api.Controllers.Base;
 
 public class ControllerBaseApiController : ControllerBase
 {
+    private readonly ILogger _logger;
     private readonly IUnitOfWork _unitOfWork;
     private IServiceBase _serviceBase;
 
-    public ControllerBaseApiController(IUnitOfWork unitOfWork)
+    public ControllerBaseApiController(ILogger logger, IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
+        _logger = logger;
     }
 
     public async Task<ActionResult<T>> ResponseAsync<T>(object result, IServiceBase serviceBase)
@@ -27,6 +29,8 @@ public class ControllerBaseApiController : ControllerBase
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, ex.Message);
+
                 // Aqui devo logar o erro
                 return NotFound(
                     $"Houve um problema interno com o servidor. Entre em contato com o Administrador do sistema caso o problema persista. Erro interno: {ex.Message}");
