@@ -18,7 +18,7 @@ public class SessionController : ControllerBaseApiController
     private readonly IRoomService _roomService;
     private readonly ISessionService _sessionService;
 
-    public SessionController(IUnitOfWork transaction, ILogger<WeatherForecastController> logger,
+    public SessionController(IUnitOfWork transaction, ILogger<SessionController> logger,
         IMovieService movieService,
         ISessionService sessionService,
         IRoomService roomService) : base(logger, transaction)
@@ -52,7 +52,6 @@ public class SessionController : ControllerBaseApiController
         catch (Exception e)
         {
             return BadRequest(e);
-
         }
     }
 

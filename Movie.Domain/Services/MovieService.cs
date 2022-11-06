@@ -21,7 +21,7 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
     public bool AddMovie(MovieAddRequest movieRequest)
     {
         var movie = new Entities.Movie(movieRequest.Movie.Image, movieRequest.Movie.Title,
-            movieRequest.Movie.Description, movieRequest.Movie.Minutes,movieRequest.Movie.Hours);
+            movieRequest.Movie.Description, movieRequest.Movie.Minutes, movieRequest.Movie.Hours);
 
         AddNotifications(movie);
         if (IsInvalid())
@@ -35,7 +35,7 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
     public bool Edit(MovieEditRequest movieRequest)
     {
         var movie = new Entities.Movie(movieRequest.Movie.Image, movieRequest.Movie.Title,
-            movieRequest.Movie.Description, movieRequest.Movie.Minutes,movieRequest.Movie.Hours);
+            movieRequest.Movie.Description, movieRequest.Movie.Minutes, movieRequest.Movie.Hours);
         _movieRepository.Add(movie);
         AddNotifications(movie);
         if (IsInvalid())
@@ -49,7 +49,7 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
     public bool Remove(DeleteMovieRequest movieRequest)
     {
         var movie = new Entities.Movie(movieRequest.Movie.Image, movieRequest.Movie.Title,
-            movieRequest.Movie.Description, movieRequest.Movie.Minutes,movieRequest.Movie.Hours);
+            movieRequest.Movie.Description, movieRequest.Movie.Minutes, movieRequest.Movie.Hours);
         _movieRepository.Add(movie);
         AddNotifications(movie);
         if (IsInvalid())
@@ -74,5 +74,53 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
         if (!result)
             AddNotification("Filme", "Filme não encontrado");
         return result;
+    }
+
+    public List<Entities.Movie> GetMovies()
+    {
+        return _movieRepository.List().ToList();
+    }
+
+    public bool UpdateMovie(MovieEditRequest request)
+    {
+        var movie = _movieRepository.GetById(request.Id);
+        if (movie == null)
+        {
+            AddNotification("Filme", "Filme não encontrado");
+            return false;
+        }
+
+        movie.Description = request.Movie.Description;
+        movie.Hours = request.Movie.Hours;
+        movie.Minutes = request.Movie.Minutes;
+        movie.Title = request.Movie.Title;
+        movie.Image = request.Movie.Image;
+        var result = _movieRepository.Edit(movie);
+        if (result == null)
+        {
+            AddNotification("Filme", "Filme não encontrado");
+            return false;
+        }
+
+        return true;
+    }
+
+    public bool DeleteMovie(Guid id)
+    {
+        var movie = _movieRepository.GetById(id);
+        if (movie == null)
+        {
+            AddNotification("Filme", "Filme não encontrado");
+            return false;
+        }
+
+        var result = _movieRepository.Remove(movie);
+        if (result == null)
+        {
+            AddNotification("Filme", "Filme não encontrado");
+            return false;
+        }
+
+        return true;
     }
 }

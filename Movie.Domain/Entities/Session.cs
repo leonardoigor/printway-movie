@@ -13,7 +13,7 @@ public class Session : EntityBase
         NotificationsConfig();
     }
 
-    public Session(DateTime date, string startDate, string endDate, double price, TypeAnimation typeAnimation,
+    public Session(DateTime date, DateTime startDate, DateTime endDate, double price, TypeAnimation typeAnimation,
         bool isDubbed, Movie movie, Room room)
     {
         Date = date;
@@ -28,8 +28,8 @@ public class Session : EntityBase
     }
 
     public DateTime Date { get; set; }
-    public string StartDate { get; set; }
-    public string EndDate { get; set; }
+    public DateTime StartDate { get; set; }
+    public DateTime EndDate { get; set; }
     public double Price { get; set; }
     public TypeAnimation TypeAnimation { get; set; }
     public bool IsDubbed { get; set; }

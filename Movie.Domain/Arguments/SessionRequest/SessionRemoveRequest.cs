@@ -13,7 +13,7 @@ public class SessionRemoveRequest
     public Entities.Movie Movie { get; set; }
     public double Price { get; set; }
     public Room Room { get; set; }
-    public string EndDate { get; set; }
+    public DateTime EndDate { get; set; }
     public bool IsDubbed { get; set; }
-    public string StartDate { get; set; }
+    public DateTime StartDate { get; set; }
 }

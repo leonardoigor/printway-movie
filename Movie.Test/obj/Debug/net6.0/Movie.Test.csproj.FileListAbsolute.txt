@@ -1,0 +1,6 @@
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Test\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Test\obj\Debug\net6.0\Movie.Test.csproj.AssemblyReference.cache
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Test\obj\Debug\net6.0\Movie.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Test\obj\Debug\net6.0\Movie.Test.AssemblyInfoInputs.cache
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Test\obj\Debug\net6.0\Movie.Test.AssemblyInfo.cs
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Test\obj\Debug\net6.0\Movie.Test.csproj.CoreCompileInputs.cache

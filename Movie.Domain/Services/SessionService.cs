@@ -9,15 +9,26 @@ namespace Movie.Domain.Services;
 
 public class SessionService : Notifiable, ISessionService, IServiceBase
 {
+    private readonly IMovieRepository _movieRepository;
     private readonly ISessionRepository _sessionRepository;
 
-    public SessionService(ISessionRepository sessionRepository)
+    public SessionService(ISessionRepository sessionRepository, IMovieRepository movieRepository)
     {
         _sessionRepository = sessionRepository;
+        _movieRepository = movieRepository;
     }
 
     public bool Add(SessionAddRequest req)
     {
+        var movie = _movieRepository.GetById(req.MovieId);
+        if (movie == null)
+        {
+            AddNotification("Movie", "Filme não encontrado");
+            return false;
+        }
+
+        req.Movie = movie;
+
         var session = new Session
         {
             Date = req.Date,
@@ -42,6 +53,15 @@ public class SessionService : Notifiable, ISessionService, IServiceBase
 
     public bool Edit(SessionEditRequest req)
     {
+        var movie = _movieRepository.GetById(req.MovieId);
+        if (movie == null)
+        {
+            AddNotification("Movie", "Filme não encontrado");
+            return false;
+        }
+
+        req.Movie = movie;
+
         var session = new Session
         {
             Date = req.Date,
@@ -91,13 +111,21 @@ public class SessionService : Notifiable, ISessionService, IServiceBase
 
     public bool Update(SessionEditRequest request)
     {
+        var movie = _movieRepository.GetById(request.MovieId);
+        if (movie == null)
+        {
+            AddNotification("Movie", "Filme não encontrado");
+            return false;
+        }
+
+        request.Movie = movie;
         var session = _sessionRepository.GetById(request.Id);
         if (session == null)
             AddNotification("Session", "Sessão não encontrada");
         session.Date = request.Date;
-        session.Movie = request.Movie;
+        session.MovieId = request.MovieId;
         session.Price = request.Price;
-        session.Room = request.Room;
+        session.RoomId = request.RoomId;
         session.EndDate = request.EndDate;
         session.IsDubbed = request.IsDubbed;
         session.StartDate = request.StartDate;

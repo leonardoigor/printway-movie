@@ -17,7 +17,7 @@ public class MovieController : ControllerBaseApiController
     private readonly IRoomService _roomService;
     private readonly ISessionService _sessionService;
 
-    public MovieController(IUnitOfWork transaction, ILogger logger,
+    public MovieController(IUnitOfWork transaction, ILogger<MovieController> logger,
         IMovieService movieService,
         ISessionService sessionService,
         IRoomService roomService) : base(logger, transaction)
@@ -52,6 +52,68 @@ public class MovieController : ControllerBaseApiController
         catch (Exception e)
         {
             _logger.LogError(e, e.Message);
+            return BadRequest(e);
+        }
+    }
+
+    [HttpGet(Name = "get-movies")]
+    public async Task<ActionResult> GetMovies()
+    {
+        var result = new BaseResponse<List<Domain.Entities.Movie>>(new List<Domain.Entities.Movie>());
+        try
+        {
+            var response = _movieService.GetMovies();
+            result.StatusCode = response.Any() ? 200 : 400;
+            result.Data = response;
+            return result.ToActionResult;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, e.Message);
+            return BadRequest(e);
+        }
+    }
+
+    [HttpPut(Name = "update-movie")]
+    public async Task<ActionResult> UpdateMovie(MovieEditRequest request)
+    {
+        var result = new BaseResponse<CreateSessionResponse>(new CreateSessionResponse());
+        try
+        {
+            var alreadyhasMovie = _movieService.Exist(request.Movie.Title);
+            if (alreadyhasMovie)
+            {
+                result.Messages = new List<string> { "Movie already exists" };
+                result.StatusCode = 400;
+                return result.ToActionResult;
+            }
+
+            _movieService.ClearNotifications();
+            var response = _movieService.UpdateMovie(request);
+            result.StatusCode = response ? 200 : 400;
+            result.AddNotifications(_movieService.Notifications);
+            await ResponseAsync<BaseResponse<CreateSessionResponse>>(result, _sessionService);
+            return result.ToActionResult;
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e);
+        }
+    }
+
+    [HttpDelete(Name = "delete-movie")]
+    public async Task<ActionResult> DeleteMovie(Guid Id)
+    {
+        var result = new BaseResponse<CreateSessionResponse>(new CreateSessionResponse());
+        try
+        {
+            var response = _movieService.DeleteMovie(Id);
+            result.StatusCode = response ? 200 : 400;
+            await ResponseAsync<BaseResponse<CreateSessionResponse>>(result, _sessionService);
+            return result.ToActionResult;
+        }
+        catch (Exception e)
+        {
             return BadRequest(e);
         }
     }

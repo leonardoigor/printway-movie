@@ -49,3 +49,4 @@ C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.pdb
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.genruntimeconfig.cache
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\ref\Movie.Infra.dll
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Infra\obj\Debug\net6.0\Movie.Infra.Migrations.AddTimeDateTime.resources
