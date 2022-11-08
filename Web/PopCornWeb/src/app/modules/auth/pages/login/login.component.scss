@@ -1,0 +1,52 @@
+$primary_color: #569cd6;
+$secondary_color: #f3f3f3;
+.login_content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+* {
+  color: $primary_color;
+}
+
+html,
+body,
+.container,
+form,
+.mat-card.mat-focus-indicator {
+  background: $secondary_color !important;
+}
+form {
+  padding: 20px;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+  padding: 80px;
+}
+#submit > button {
+  background: $primary_color !important;
+  color: white;
+  border: none;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#submit {
+  display: flex;
+  flex-direction: column;
+}
+#eye {
+  color: $secondary_color !important;
+}
+#label {
+  font-family: "Caveat", cursive;
+  font-size: 58px;
+  align-self: center;
+  color: $primary_color;
+}

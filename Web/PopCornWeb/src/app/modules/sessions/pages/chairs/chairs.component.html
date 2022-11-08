@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="chair-container">
+    <div class="chunk" *ngFor="let chunk of getChairs">
+      <div
+        [class]="getClassChair(chair)"
+        *ngFor="let chair of chunk"
+        (click)="choosedChair(chair.index)"
+      >
+        {{ chair.name }}
+      </div>
+    </div>
+    <div class="screen"></div>
+  </div>
+</div>

@@ -74,3 +74,5 @@ C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Api\o
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Api\obj\Debug\net6.0\Movie.Api.pdb
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Api\obj\Debug\net6.0\Movie.Api.genruntimeconfig.cache
 C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Api\obj\Debug\net6.0\ref\Movie.Api.dll
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\igor_\OneDrive\Área de Trabalho\projetos\c#\printway-movie\Movie.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

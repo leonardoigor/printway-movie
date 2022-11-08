@@ -9,12 +9,14 @@ namespace Movie.Domain.Services;
 public class MovieService : Notifiable, IMovieService, IServiceBase
 {
     private readonly IMovieRepository _movieRepository;
+    private readonly ISessionRepository _sessionRepository;
 
 
     public MovieService(
-        IMovieRepository movieRepository)
+        IMovieRepository movieRepository, ISessionRepository sessionRepository)
     {
         _movieRepository = movieRepository;
+        _sessionRepository = sessionRepository;
     }
 
 
@@ -114,6 +116,14 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
             return false;
         }
 
+        // check if has relation with Session
+        var has_session_relation = _sessionRepository.GetBy(x => x.MovieId == movie.Id);
+        if (has_session_relation != null)
+        {
+            AddNotification("Filme", "Filme esta vinculado a uma sessão");
+            return false;
+        }
+
         var result = _movieRepository.Remove(movie);
         if (result == null)
         {
@@ -121,6 +131,25 @@ public class MovieService : Notifiable, IMovieService, IServiceBase
             return false;
         }
 
+        return true;
+    }
+
+    public Entities.Movie GetMovieById(Guid id)
+    {
+        return _movieRepository.GetById(id);
+    }
+
+    public bool Add(Entities.Movie _movie)
+    {
+        var movie = new Entities.Movie(_movie.Image, _movie.Title,
+            _movie.Description, _movie.Minutes, _movie.Hours);
+
+        AddNotifications(movie);
+        if (IsInvalid())
+            return false;
+        var result = _movieRepository.Add(movie);
+        if (result == null)
+            return false;
         return true;
     }
 }

@@ -12,7 +12,16 @@ public class SessionAddRequest
     public DateTime Date { get; set; }
     public double Price { get; set; }
     public bool IsDubbed { get; set; }
-    public DateTime EndDate => StartDate.AddMinutes(Movie.Minutes).AddHours(Movie.Hours);
+
+    public DateTime EndDate
+    {
+        get
+        {
+            if (Movie != null) return StartDate.AddMinutes(Movie.Minutes).AddHours(Movie.Hours);
+
+            return DateTime.MinValue;
+        }
+    }
 
     public DateTime StartDate { get; set; }
 }

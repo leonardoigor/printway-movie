@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Movie.Api.Controllers.Base;
 using Movie.Domain.Arguments;
@@ -30,6 +32,7 @@ public class MovieController : ControllerBaseApiController
 
 
     [HttpPost(Name = "create-movie")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<ActionResult> CreateMovie(MovieAddRequest request)
     {
         var result = new BaseResponse<CreateSessionResponse>(new CreateSessionResponse());
@@ -57,8 +60,10 @@ public class MovieController : ControllerBaseApiController
     }
 
     [HttpGet(Name = "get-movies")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<ActionResult> GetMovies()
     {
+        Console.WriteLine("create-movie");
         var result = new BaseResponse<List<Domain.Entities.Movie>>(new List<Domain.Entities.Movie>());
         try
         {
@@ -75,15 +80,16 @@ public class MovieController : ControllerBaseApiController
     }
 
     [HttpPut(Name = "update-movie")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<ActionResult> UpdateMovie(MovieEditRequest request)
     {
         var result = new BaseResponse<CreateSessionResponse>(new CreateSessionResponse());
         try
         {
-            var alreadyhasMovie = _movieService.Exist(request.Movie.Title);
-            if (alreadyhasMovie)
+            var alreadyhasMovie = _movieService.Exist(request.Id);
+            if (!alreadyhasMovie)
             {
-                result.Messages = new List<string> { "Movie already exists" };
+                result.Messages = new List<string> { "Filme nao exist" };
                 result.StatusCode = 400;
                 return result.ToActionResult;
             }
@@ -109,7 +115,27 @@ public class MovieController : ControllerBaseApiController
         {
             var response = _movieService.DeleteMovie(Id);
             result.StatusCode = response ? 200 : 400;
+            result.AddNotifications(_movieService.Notifications);
             await ResponseAsync<BaseResponse<CreateSessionResponse>>(result, _sessionService);
+            return result.ToActionResult;
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e);
+        }
+    }
+
+    // get by id
+    [HttpGet("{id}", Name = "get-movie-by-id")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public async Task<ActionResult> GetMovieById(Guid id)
+    {
+        var result = new BaseResponse<Domain.Entities.Movie>(new Domain.Entities.Movie());
+        try
+        {
+            var response = _movieService.GetMovieById(id);
+            result.StatusCode = response != null ? 200 : 400;
+            result.Data = response;
             return result.ToActionResult;
         }
         catch (Exception e)

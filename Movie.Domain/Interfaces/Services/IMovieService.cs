@@ -13,4 +13,6 @@ public interface IMovieService : INotifiable
     List<Entities.Movie> GetMovies();
     bool UpdateMovie(MovieEditRequest request);
     bool DeleteMovie(Guid id);
+    Movie.Domain.Entities.Movie GetMovieById(Guid id);
+    bool Add(Entities.Movie movie);
 }

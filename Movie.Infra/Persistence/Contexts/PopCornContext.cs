@@ -1,8 +1,11 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Movie.Domain.Entities;
+using Newtonsoft.Json;
 
 namespace Movie.Infra.Persistence.Contexts;
+
+
 
 public class PopCornContext : DbContext
 {
@@ -36,6 +39,9 @@ public class PopCornContext : DbContext
         modelBuilder.Configurations.AddFromAssembly(typeof(PopCornContext).Assembly);
 
         #endregion
+
+
+
 
         base.OnModelCreating(modelBuilder);
     }

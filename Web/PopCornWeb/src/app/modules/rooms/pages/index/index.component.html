@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row col-12">
+    <mat-card>
+      <mat-card-title style="margin-bottom: 40px">
+        <div class="flex justify-between">
+          <span class="font-light"> Salas </span>
+          <!-- <button mat-flat-button color="primary" (click)="sincronizar()">
+            <mat-icon> sync </mat-icon>
+            Sincronizar aulas
+          </button> -->
+        </div>
+      </mat-card-title>
+      <mat-card-content>
+        <table
+          mat-table
+          [dataSource]="dataSource_map"
+          class="w-full mat-elevation-z8"
+        >
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Nome</th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef>Quantidade de Assentos</th>
+            <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="url">
+            <th mat-header-cell *matHeaderCellDef>url</th>
+            <td mat-cell *matCellDef="let element">
+              <a [href]="element.url" target="_blank" rel="noopener noreferrer">
+                <mat-icon
+                  aria-hidden="false"
+                  aria-label="Example home icon"
+                  fontIcon="remove_red_eye"
+                ></mat-icon
+              ></a>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+        <div class="flex justify-end p-10">
+          <!-- <mat-paginator
+            [length]="length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            aria-label="Select page"
+            (page)="pageEvent = changePage($event)"
+          >
+          </mat-paginator> -->
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

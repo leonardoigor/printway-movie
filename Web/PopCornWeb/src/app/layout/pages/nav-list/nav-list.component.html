@@ -1,0 +1,47 @@
+<mat-nav-list class="nav">
+  <div *ngFor="let menuItem of menuItems">
+    <span *ngIf="hasPermission(menuItem.permission)">
+      <mat-accordion *ngIf="menuItem.children; else menuItemSingle">
+        <mat-expansion-panel
+          class="border-none bg-white-100"
+          [class.mat-elevation-z0]="true"
+          dense
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span>
+                {{ menuItem.name }}
+              </span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list class="p-0">
+            <span *ngFor="let subMenuItem of menuItem.children">
+              <span *ngIf="hasPermission(subMenuItem.permission)">
+                <mat-list-item
+                  [routerLink]="subMenuItem.to"
+                  routerLinkActive="menu_item__active"
+                  class="menu_item sub_menu__item"
+                >
+                  <mat-icon mat-list-icon>{{ subMenuItem.icon }}</mat-icon>
+                  <span>{{ subMenuItem.name }}</span>
+                </mat-list-item>
+              </span>
+            </span>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <ng-template #menuItemSingle>
+        <mat-list-item
+          *ngIf="!menuItem.children"
+          [routerLink]="menuItem.to"
+          routerLinkActive="menu_item__active"
+          dense
+          class="menu_item"
+        >
+          <mat-icon matListIcon>{{ menuItem.icon }}</mat-icon>
+          <span class="text-dimgray">{{ menuItem.name }}</span>
+        </mat-list-item>
+      </ng-template>
+    </span>
+  </div>
+</mat-nav-list>

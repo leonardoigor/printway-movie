@@ -121,7 +121,11 @@ public class SessionService : Notifiable, ISessionService, IServiceBase
         request.Movie = movie;
         var session = _sessionRepository.GetById(request.Id);
         if (session == null)
+        {
             AddNotification("Session", "Sessão não encontrada");
+            return false;
+        }
+
         session.Date = request.Date;
         session.MovieId = request.MovieId;
         session.Price = request.Price;
@@ -142,5 +146,10 @@ public class SessionService : Notifiable, ISessionService, IServiceBase
             AddNotification("Session", "Sessão não encontrada");
 
         return _sessionRepository.Remove(session);
+    }
+
+    public Session GetById(Guid id)
+    {
+        return _sessionRepository.GetById(id);
     }
 }

@@ -2,7 +2,7 @@
 
 public class Chair
 {
-    public Chair(int index, int sizeByCollumn = 5)
+    public Chair(int index, int sizeByCollumn = 20)
     {
         SizeByCollumn = sizeByCollumn;
         Index = index;

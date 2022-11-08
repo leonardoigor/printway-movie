@@ -42,12 +42,18 @@ public class RoomService : Notifiable, IRoomService, IServiceBase
         throw new NotImplementedException();
     }
 
+
     public bool Exist(Guid roomId)
     {
         var result = _roonRepository.Exist(x => x.Id == roomId);
         if (!result)
             AddNotification("Sala", "Sala não encontrada");
         return result;
+    }
+
+    public List<Room> getAll()
+    {
+        return _roonRepository.List().ToList();
     }
 
     public bool Edit(EditRoomRequest req)

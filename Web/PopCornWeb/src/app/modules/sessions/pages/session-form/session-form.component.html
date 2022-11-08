@@ -1,0 +1,87 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>
+      <span class="font-light">Cargos</span>
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{ SessionId ? "Editar" : "Novo" }}
+    </mat-card-subtitle>
+    <mat-card-content>
+      <form [formGroup]="form" class="row" (ngSubmit)="submitForm()">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Sala</mat-label>
+              <select matNativeControl required formControlName="roomId">
+                <option [value]="m.id" *ngFor="let m of roomsList">
+                  {{ m.name }}
+                </option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Filme</mat-label>
+              <select matNativeControl required formControlName="movieId">
+                <option [value]="m.id" *ngFor="let m of moviesList">
+                  {{ m.title }}
+                </option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label> Valor </mat-label>
+              <input type="number" matInput formControlName="price" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label> Data </mat-label>
+              <input type="datetime-local" matInput formControlName="date" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label> Data inicio </mat-label>
+              <input
+                type="datetime-local"
+                matInput
+                formControlName="startDate"
+              />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-radio-group
+              aria-label="Select an option"
+              formControlName="typeAnimation"
+            >
+              <mat-radio-button matInput value="0">2d </mat-radio-button>
+              <mat-radio-button matInput value="1">3d</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <div class="col-md-6">
+            <section class="example-section">
+              <mat-checkbox
+                matInput
+                class="example-margin"
+                formControlName="isDubbed"
+                >Dublado</mat-checkbox
+              >
+            </section>
+          </div>
+
+          <mat-card-actions align="end">
+            <button mat-flat-button type="button" routerLink="/painel/cargos">
+              Cancelar
+            </button>
+            <button mat-flat-button type="submit" color="primary">
+              Salvar
+            </button>
+          </mat-card-actions>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

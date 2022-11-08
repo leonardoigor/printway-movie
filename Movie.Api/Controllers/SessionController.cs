@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Movie.Api.Controllers.Base;
 using Movie.Domain.Arguments;
@@ -31,6 +33,7 @@ public class SessionController : ControllerBaseApiController
 
 
     [HttpGet(Name = "GetAllSessions")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public IActionResult GetAllSessions()
     {
         var response = _sessionService.GetAll();
@@ -38,7 +41,17 @@ public class SessionController : ControllerBaseApiController
         return Ok(result);
     }
 
+    [HttpGet("{id}", Name = "GetSessionById")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public IActionResult GetSessionById(Guid id)
+    {
+        var response = _sessionService.GetById(id);
+        var result = new BaseResponse<Session>(response);
+        return Ok(result);
+    }
+
     [HttpDelete("{id}", Name = "DeleteSession")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<IActionResult> DeleteSession(Guid id)
     {
         try
@@ -56,6 +69,7 @@ public class SessionController : ControllerBaseApiController
     }
 
     [HttpPut(Name = "Update-session")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<IActionResult> UpdateSession([FromBody] SessionEditRequest request)
     {
         try
@@ -72,6 +86,7 @@ public class SessionController : ControllerBaseApiController
     }
 
     [HttpPost(Name = "create-session")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<ActionResult> CreateSession(SessionAddRequest request)
     {
         var result = new BaseResponse<CreateSessionResponse>(new CreateSessionResponse());
@@ -86,6 +101,9 @@ public class SessionController : ControllerBaseApiController
                 result.StatusCode = 400;
                 return result.ToActionResult;
             }
+
+            request.Movie = _movieService.GetMovieById(request.MovieId);
+
 
             var response = _sessionService.Add(request);
             result.StatusCode = response ? 200 : 400;

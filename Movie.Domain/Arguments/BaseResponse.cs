@@ -5,6 +5,10 @@ namespace Movie.Domain.Arguments;
 
 public class BaseResponse<T>
 {
+    public BaseResponse()
+    {
+    }
+
     public BaseResponse(T data, List<string> messages = null, int statusCode = 200)
     {
         Data = data;

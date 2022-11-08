@@ -13,4 +13,5 @@ public interface ISessionService : INotifiable, IServiceBase
     List<Session> GetAll();
     bool Update(SessionEditRequest request);
     bool Delete(Guid id);
+    Session GetById(Guid id);
 }

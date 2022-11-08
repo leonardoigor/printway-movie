@@ -1,0 +1,28 @@
+.card-man {
+  max-width: 249px;
+  max-height: 453px;
+}
+.card-container {
+  max-height: 93vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 30px;
+  position: relative;
+}
+.duration {
+  background: #222;
+  padding: 2px 6px;
+  margin-left: 3px;
+  color: #fff;
+  display: inline-block;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+.content-card {
+  display: flex;
+  place-content: space-between;
+}

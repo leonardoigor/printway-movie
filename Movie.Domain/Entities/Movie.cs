@@ -1,4 +1,5 @@
-﻿using Movie.Domain.Entities.Base;
+﻿using System.ComponentModel.DataAnnotations;
+using Movie.Domain.Entities.Base;
 using Movie.Domain.Resources;
 using prmToolkit.NotificationPattern;
 using prmToolkit.NotificationPattern.Extensions;
@@ -21,7 +22,8 @@ public class Movie : EntityBase
         NotificationsConfig();
     }
 
-    public string Image { get; set; }
+    [MaxLength(1000)] public string Image { get; set; }
+
     public string Title { get; set; }
     public string Description { get; set; }
     public int Minutes { get; set; }

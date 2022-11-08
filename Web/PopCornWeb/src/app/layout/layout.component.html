@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+    class="sidenav"
+    fixedInViewport
+    style="border-right: 1px solid #eeeeee"
+  >
+    <mat-toolbar style="background: #5fa1d8">
+      <div
+        style="
+          width: 196px;
+          font-size: 35px;
+          font-family: 'Caveat', cursive;
+          background: #5fa1d8;
+          color: white;
+        "
+      >
+        <img
+          style="width: 29px; height: 34px"
+          src="/assets/popcorn.png"
+          alt="popcorn"
+        />
+        PopCorn
+      </div>
+    </mat-toolbar>
+    <app-nav-list [menuItems]="menuItems"></app-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" [style]="getHeigth">
+      <button
+        class="text-black"
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        type="button"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span></span>
+{{email}}
+    </mat-toolbar>
+    <main class="p-5">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

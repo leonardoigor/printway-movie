@@ -1,0 +1,54 @@
+<div class="float-button">
+  <button mat-mini-fab color="accent" aria-label="Adicionar" (click)="create()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<div class="container">
+  <!-- button -->
+
+  <div class="card-container">
+    <div *ngFor="let session of sessions" class="card-man">
+      <mat-card
+        class="example-card"
+        (click)="edit(session)"
+        style="
+          height: 438px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        "
+      >
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ session.movie.title }}</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          [src]="session.movie.image"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-content>
+          <div class="content-card">
+            <p>
+              {{ session.movie.description }}
+            </p>
+            <div>Assentos: {{ session.room.quantity }}</div>
+            <div class="duration">
+              {{
+                convertHourToMinutes(session.movie.hours) +
+                  session.movie.minutes
+              }}
+              min
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="goToBye(session)">Comprar</button>
+          <button mat-button (click)="delete(session)" color="accent">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
