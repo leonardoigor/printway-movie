@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Adl/Bux3VHELehwDRG74Nl+7KyElkIaxLf4MidZxuB2m9hrojBmivIDlIXzd4SyW/pfcf6mkPSFdzDYRjqz2Vw==",
+  "dgSpecHash": "TIXkYTY+Pwh9cZtAY8gkpjFCPvsXCrLbr8TbjOQGMr5UTxKolmcgV4P7XO8ggM6ITbpwTQIo8nk36fH3A/AMmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Test\\Test.csproj",
+  "projectFilePath": "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Test\\Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\igor_\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.11\\microsoft.aspnetcore.authentication.jwtbearer.6.0.11.nupkg.sha512",

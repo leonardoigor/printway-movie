@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\Movie.Test.csproj": {}
+    "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\Movie.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj": {
+    "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj",
+        "projectUniqueName": "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj",
         "projectName": "Movie.Domain",
-        "projectPath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj",
+        "projectPath": "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj",
         "packagesPath": "C:\\Users\\igor_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\obj\\",
+        "outputPath": "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\igor_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -68,14 +68,14 @@
         }
       }
     },
-    "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\Movie.Test.csproj": {
+    "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\Movie.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\Movie.Test.csproj",
+        "projectUniqueName": "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\Movie.Test.csproj",
         "projectName": "Movie.Test",
-        "projectPath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\Movie.Test.csproj",
+        "projectPath": "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\Movie.Test.csproj",
         "packagesPath": "C:\\Users\\igor_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\obj\\",
+        "outputPath": "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\igor_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -92,8 +92,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj": {
-                "projectPath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj"
+              "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj": {
+                "projectPath": "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Domain\\Movie.Domain.csproj"
               }
             }
           }

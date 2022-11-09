@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c6TvY2AB9FNnvpey6KpHmSlFn/hHbGYRwvT1gQAuT7Qwua9GwuU9HUlGZmicXJ/x9959GoCsBnaxwY8NP5EHfg==",
+  "dgSpecHash": "2G0J0tZNu4N1pTVQLtkC79m0+8gpgVWlaB+RP4vKc4jwqwv+2Q+THLIVmJJugGmvWoGQqwsxpCl6uunQwV1QOw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\Movie.Test.csproj",
+  "projectFilePath": "c:\\Users\\igor_\\OneDrive\\Área de Trabalho\\projetos\\c#\\printway-movie\\Movie.Test\\Movie.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\igor_\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\igor_\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
